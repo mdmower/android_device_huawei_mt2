@@ -13,6 +13,13 @@
 # limitations under the License.
 
 on boot
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 12d1
+    write /sys/class/android_usb/android0/idProduct 1038
+    write /sys/class/android_usb/android0/f_mass_storage/inquiry_string "Huawei                   0000"
+    setprop usb.vendor 12d1
+    setprop usb.product.adb 1038
+    setprop usb.product.mtpadb 1052
     setprop recovery.cpu.power_params 1
     start chargeled
     setprop recovery.perf.mode 0
