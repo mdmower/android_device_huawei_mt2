@@ -111,6 +111,19 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/huawei/mt2
 -include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/huawei/mt2/sepolicy
 
+# TWRP
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+RECOVERY_VARIANT := twrp
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
+TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_NTFS_3G := true
+TW_THEME := portrait_hdpi
+
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 25
 
