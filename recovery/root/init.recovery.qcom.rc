@@ -23,6 +23,7 @@ on boot
     setprop recovery.cpu.power_params 1
     start chargeled
     setprop recovery.perf.mode 0
+    write /sys/touch_screen/easy_wakeup_gesture 1
 
 service chargeled /sbin/chargeled
     disabled
